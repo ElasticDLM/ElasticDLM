@@ -105,16 +105,8 @@
 
     <div class="container">
         
-        <div style="text-align: center;">
+        <div style="text-align: center; margin-bottom: 40px;">
             <h1>LEARNING TO RESCALE: ON-THE-FLY SEQUENCE LENGTH ADAPTATION IN NON-AUTOREGRESSIVE SPEECH SYNTHESIS</h1>
-            <p style="font-size: 1.2em;">
-                <strong>Jiawei Jin<sup>1,∗</sup>, Ren Wang<sup>1,∗</sup>, Zhiyu Cui<sup>2</sup>, Shun Lei<sup>1</sup>, Yixuan Zhou<sup>1</sup>, Zhiyong Wu<sup>1,†</sup></strong>
-            </p>
-            <p>
-                <sup>1</sup>Shenzhen International Graduate School, Tsinghua University, China<br>
-                <sup>2</sup>Ant Group, China<br>
-                <small><sup>∗</sup>Equal contribution, <sup>†</sup>Corresponding author</small>
-            </p>
         </div>
 
         <p style="text-align: justify; margin-top: 30px;">
@@ -130,7 +122,6 @@
         <h2>Main Results</h2>
         <div style="text-align: center; margin-top: 20px;">
             <img src="figs/main_results.png" alt="Main MOS scores and other metrics" style="max-width: 80%; border: 1px solid #ccc;">
-         <!-- <p><em>Fig. 2: Main experimental results</em></p> -->
         </div>
         <p class="figure-caption">
             We conducted our evaluations on the seed-test-zh and seed-test-en benchmarks from Seed-TTS, using MaskGCT as our primary baseline. We designed three distinct settings for the MaskGCT baseline. The first, termed <strong>Normal</strong>, represents the standard MaskGCT which relies on its built-in duration model. The second, <strong>Fix</strong>, simulates a poor duration estimate by initializing the sequence to a fixed length (4s for Chinese, 4.5s for English). Finally, to serve as a performance upper bound, the <strong>GT</strong> setting provides MaskGCT with the ground-truth audio length.
@@ -163,7 +154,7 @@
                     <td><audio controls src="normal_len/zh/ground_truth/sample_0002.wav"></audio></td>
                     <td><audio controls src="normal_len/zh/init_gt_len/sample_0002.wav"></audio></td>
                     <td><audio controls src="normal_len/zh/init_normal_len/sample_0002.wav"></audio></td>
-                    <td><audio controls src="normal_len/zh/ours_normal_len/sample_0002.wav"></audio></td>
+                    <td><audio controls src="normal_len/zh/ours_normal_len/sample_0001.wav"></audio></td>
                 </tr>
                 <tr>
                     <td>他们宁愿躺在家里睡上半年，也不肯麻烦一点到南方去。</td>
@@ -332,7 +323,6 @@
         <h2>Different Initial Length</h2>
         <div style="text-align: center; margin-top: 20px;">
             <img src="figs/initial_len_results.png" alt="Results with different initial lengths" style="max-width: 80%; border: 1px solid #ccc;">
-            <!-- <p><em>Fig. 3: Performance under different initial length conditions.</em></p> -->
         </div>
         <p class="figure-caption">
             To validate the powerful length adaptation capability of our model, this section tests its speech generation performance under conditions of varying initial sequence lengths. This experiment demonstrates that the model does not rely on precise prior length information and can robustly generate high-quality target speech from varied initial states, highlighting its flexibility and robustness.
